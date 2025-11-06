@@ -7,6 +7,7 @@ import { Settings } from "lucide-react"
 import Sidebar from "./components/Sidebar"
 import { useCalcStore } from "./lib/store"
 import ModeSwitch from "./components/ModeSwitch"
+import ImageUploadDialog from "./components/ImageUploadDialog"
 import { useModeStore, THEMES, type Mode } from "./lib/mode"
 import { evalByMode } from "./lib/eval"
 import { detectModeFromInput } from "./lib/detectMode"
@@ -175,13 +176,16 @@ export default function Page() {
               <ModeSwitch />
             </div> */}
           </div>
-          <button
-            className="inline-flex items-center gap-2 rounded-md bg-zinc-900/70 px-3 py-1.5 text-sm text-zinc-300 ring-1 ring-zinc-800 hover:text-white"
-            title="Settings (coming soon)"
-          >
-            <Settings size={16} />
-            Settings
-          </button>
+          <div className="flex items-center gap-2">
+            <ImageUploadDialog />
+            <button
+              className="inline-flex items-center gap-2 rounded-md bg-zinc-900/70 px-3 py-1.5 text-sm text-zinc-300 ring-1 ring-zinc-800 hover:text-white"
+              title="Settings (coming soon)"
+            >
+              <Settings size={16} />
+              Settings
+            </button>
+          </div>
         </header>
 
         {/* Card */}
